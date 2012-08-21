@@ -13,7 +13,7 @@
 	        var style = document.createElement('style');
 	        style.type = 'text/css';
 	        style.innerHTML = '#gmail_relative_date_labels { margin: 8px 0 8px 0px; line-height: 17px; font-size: 13px; }' +
-				' #gmail_relative_date_labels a { color: #000; text-decoration: none; display: block; }'+
+				' #gmail_relative_date_labels a { text-decoration: none; display: block; }'+
 				' #gmail_relative_date_labels .active_filter a { font-weight: bold; }';
 				
 			document.getElementsByTagName('head')[0].appendChild(style);
@@ -49,7 +49,7 @@
 
 	function createAnchor(name, afterOffset, beforeOffset) {
 		var div = document.createElement('div');
-		div.innerHTML = '<div class="aim"><div class="TN"><div class="aio"><a href="#">' + name + '</a></div></div></div>';
+		div.innerHTML = '<div class="aim"><div class="TN"><div class="aio"><a href="#" class="J-Ke n0">' + name + '</a></div></div></div>';
 		div.onclick = function() {
 			var activeLinks = document.querySelectorAll('#gmail_relative_date_labels div.TN.active_filter');
 			if (activeLinks && activeLinks.length == 1) {
