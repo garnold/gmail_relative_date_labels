@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+
+    "name": "Gmail Relative Date Labels",
+    "description": "Adds labels to Gmail for filtering by relative dates (today, yesterday, ...).",
+    "version": "1.0",
+
+    "content_scripts": [
+        {
+            "matches": [
+                "http://mail.google.com/*",
+                "https://mail.google.com/*"
+            ],
+            "js": [ "gmail_relative_date_labels.js" ],
+            "css": [ "gmail_relative_date_labels.css" ],
+            "run_at": "document_idle",
+            "all_frames": true
+        }
+    ]
+}

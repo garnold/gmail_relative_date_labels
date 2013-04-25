@@ -1,0 +1,14 @@
+#gmail_relative_date_labels {
+    margin: 8px 0 8px 0px;
+    line-height: 17px;
+    font-size: 13px;
+}
+
+#gmail_relative_date_labels a {
+    text-decoration: none;
+    display: block;
+}
+
+#gmail_relative_date_labels .active_filter a {
+    font-weight: bold;
+}
