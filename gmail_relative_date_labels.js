@@ -36,12 +36,12 @@
         var div = document.createElement('div');
         div.innerHTML = '<div class="aim"><div class="TN"><div class="aio"><a href="#" class="J-Ke n0">' + name + '</a></div></div></div>';
         div.onclick = function () {
-            var activeLinks = document.querySelectorAll('#gmail_relative_date_labels div.TN.active_filter');
-            if (activeLinks && activeLinks.length == 1) {
-                activeLinks[0].className = 'TN';
+            var activeLinks = document.querySelector('#gmail_relative_date_labels div.TN.active_filter');
+            if (activeLinks) {
+                activeLinks.className = 'TN';
             }
 
-            this.querySelectorAll('.TN')[0].className = 'TN active_filter';
+            this.querySelector('.TN').className = 'TN active_filter';
 
             applyFilter(afterOffset, beforeOffset);
         };
