@@ -1,8 +1,8 @@
 (function () {
 
     function addLabelsIfReady() {
-        var composeButtonNavigationDiv = findComposeButtonNavigationDiv();
-        if (composeButtonNavigationDiv) {
+        var inboxNavigationDiv = findInboxNavigationDiv();
+        if (inboxNavigationDiv) {
             var div = document.createElement('div');
             div.id = 'gmail_relative_date_labels';
             div.appendChild(createAnchor('Today', '1d', null));
@@ -11,7 +11,7 @@
             div.appendChild(createAnchor('Past month', '1m', null));
             div.appendChild(createAnchor('Past year', '1y', null));
 
-            composeButtonNavigationDiv.insertBefore(div, composeButtonNavigationDiv.firstChild.nextSibling);
+            inboxNavigationDiv.parentNode.insertBefore(div, inboxNavigationDiv);
         }
         else {
             window.setTimeout(function () {
@@ -20,11 +20,11 @@
         }
     }
 
-    function findComposeButtonNavigationDiv() {
+    function findInboxNavigationDiv() {
         var navigationDivs = document.querySelectorAll('div[role=navigation]');
         for (var i = 0; i < navigationDivs.length; i++) {
             var navigationDiv = navigationDivs[i];
-            if (navigationDiv.innerHTML.indexOf('COMPOSE') !== -1) {
+            if (navigationDiv.innerHTML.indexOf('#inbox') !== -1) {
                 return navigationDiv;
             }
         }
